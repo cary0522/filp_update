@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="filp_update.css">
+    <title>Document</title>
+</head>
+<body>
+    <p>test javascript for</p>
+    <div class="test">
+    <div class="test_area">
+        <button class="start">開始測驗</button>
+
+    </div>
+    </div>
+
+    <script>
+        var btn_start = document.getElementsByClassName("start");
+        var test_area = document.getElementsByClassName("test_area");
+        btn_start[0].addEventListener("click",function(){
+            test_area[0].style["animation"] = "filp 2s ease-in forwards";
+        })
+
+        var question = ["1.當我和朋友一起用餐時，在選擇用餐或是吃什麼時，我常是",
+        "2.當我去買衣服時，我常是",
+        "3.我的消費習慣是"];
+        var answer_D = ["決定者：大家意見不同時，通常我都是決定者。",
+        "不容易受到店員影響，心中有自己的想法，可以自己做決定。",
+        "找到要買的東西，付錢走人。"];
+        var answer_I = ["氣氛製造者：詢問大家要吃什麼，很能帶動情緒氣氛。",
+        "店員的親切及好的感受，常會促進我的購買慾望。",
+        "很隨意的逛，不特定買什麼。"]
+        var answer_S = ["附和者：吃甚麼都可以，我沒意見。",
+        "我會找熟悉的店購買。",
+        "有一定的消費習慣、店家，不太喜歡改變。"]
+        var answer_C = ["意見提供者：常去否定別人的提議，自己卻又沒意見，也不做任何決定。",
+        "我會思考衣服品質與價錢是否成比例、價錢是否合理。",
+        "我注重東西好不好，較有成本觀念。"]
+        // var name = ["1","2","3"]
+        var test = document.getElementsByClassName("test");
+        for(let x = 0 ; x < 3 ; x++){
+            // test.innerHTML = `<div class=test_box>
+            //     <h5>${question[x]}</h5>
+            //     <input type="radio" name=${x}>${answer_D[x]}<br>
+            //     <input type="radio" name=${x}>${answer_I[x]}<br>
+            //     <input type="radio" name=${x}>${answer_S[x]}<br>
+            //     <input type="radio" name=${x}>${answer_C[x]}<br>
+            //     </div>`
+            if (x == 0){
+                test.innerHTML = `<div class=test_box>
+                <h5>${question[x]}</h5>
+                <input type="radio" name=${x}>${answer_D[x]}<br>
+                <input type="radio" name=${x}>${answer_I[x]}<br>
+                <input type="radio" name=${x}>${answer_S[x]}<br>
+                <input type="radio" name=${x}>${answer_C[x]}<br>
+                <button class="filp">下一題</button></div>`
+                // btn_filp[0].addEventListener("click",function(){
+                //     test_box[0].style["animation"] = "filp 2s forwards";
+                // })
+                }
+                else if (x == 2){
+                test.innerHTML = `<div class=test_box>
+                <h5>${question[x]}</h5>
+                <input type="radio" name=${x}>${answer_D[x]}<br>
+                <input type="radio" name=${x}>${answer_I[x]}<br>
+                <input type="radio" name=${x}>${answer_S[x]}<br>
+                <input type="radio" name=${x}>${answer_C[x]}<br>
+                <button class="back">上一題</button></div>`
+
+                }
+                else{
+                test.innerHTML = `<div class=test_box>
+                <h5>${question[x]}</h5>
+                <input type="radio" name=${x}>${answer_D[x]}<br>
+                <input type="radio" name=${x}>${answer_I[x]}<br>
+                <input type="radio" name=${x}>${answer_S[x]}<br>
+                <input type="radio" name=${x}>${answer_C[x]}<br>
+                <button class="back">上一題</button>
+                <button class="filp">下一題</button></div>`
+                
+                }
+            document.write(test.innerHTML);
+        }
+        // var btn_back = document.getElementsByClassName("back");
+        // var btn_filp = document.getElementsByClassName("filp");
+        // for(let j = 0 ; j < 3 ; j++){
+        // btn_filp[j].addEventListener("click",function(){
+        //     test_box[j].style["animation"] = "filp 2s ease-in forwards"
+        // })
+        // btn_back[j+1].addEventListener("click",function(){
+        //     test_box[j].style["animation"] = "filp 2s ease-out reverse forwards"
+        // })
+        // }
+
+
+        // for(var f = 0 ; f < 3 ; f++){
+        //     btn_filp[f].addEventListener("click",function(){
+        //         test_box[f].style["animation"] = "filp 2s ease-in forwards";
+        //     })
+        // }
+
+
+        
+        var btn_filp = document.getElementsByClassName("filp");
+        var btn_back = document.getElementsByClassName("back");
+        var test_box = document.getElementsByClassName("test_box");
+        console.log(btn_filp)
+        console.log(btn_back)
+        console.log(test_box)
+        for(let f = 0 ; f < 2 ; f++){
+        btn_filp[f].addEventListener("click",function(){
+            test_box[f].style["animation"] = "filp 2s ease-in forwards";
+        })
+
+        btn_back[f].addEventListener("click",function(){
+            test_box[f].style["animation"] = "filp 2s ease-in-out none reverse"
+        })
+        }
+
+        var test_box = document.getElementsByClassName("test_box");
+        for(let i = 0 ; i < 3 ; i++){
+            test_box[i].style["z-index"] = -i;
+        }
+
+    </script>
+</body>
+</html>

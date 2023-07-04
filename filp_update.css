@@ -1,0 +1,34 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.test{
+    width: 100%;
+    /* height: 100vh; */
+    position: relative;
+}
+
+.test_area , .test_box{
+    width: 45%;
+    height: 200px;
+    border: 1px black solid;
+    position: absolute;
+    left: 27%;
+    background-color: aliceblue;
+}
+
+.test_area{
+    z-index: 21;
+}
+
+
+
+@keyframes filp{
+    0%{
+        transform:translateY(0px);
+    }
+    100%{
+        transform:translateY(-900px);
+    }
+}
